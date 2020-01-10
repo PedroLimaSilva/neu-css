@@ -1,0 +1,21 @@
+{
+  "name": "neu-css",
+  "version": "0.1.0",
+  "description": "CSS Library using neumorphism",
+  "main": "index.js",
+  "repository": "https://github.com/PedroLimaSilva/neu-css",
+  "author": "Pedro Lima e Silva",
+  "license": "MIT",
+  "scripts": {
+    "start": "gulp",
+    "server": "http-server ./dist"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-csso": "^4.0.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-sass": "^4.0.2",
+    "http-server": "^0.12.1",
+    "node-sass": "^4.13.0"
+  }
+}
