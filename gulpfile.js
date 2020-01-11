@@ -13,7 +13,7 @@ function build_sass() {
   return src('./src/scss/neu.scss')
     .pipe(sass())
     .pipe(minifyCSS())
-    .pipe(dest('./dist/css'));
+    .pipe(dest('./docs/css'));
 }
 
 function watch_sass() {
@@ -21,9 +21,9 @@ function watch_sass() {
 }
 
 function build_html() {
-  return src('./src/demo/*.html')
+  return src('./src/docs/*.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(dest('./dist'));;
+    .pipe(dest('./docs'));;
 }
 
 function watch_html() {

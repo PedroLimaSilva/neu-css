@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "start": "gulp",
-    "server": "http-server ./dist"
+    "server": "http-server ./docs"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
