@@ -17,7 +17,7 @@ function build_sass() {
 }
 
 function watch_sass() {
-  return watch('./src/**/*.scss', build_sass);
+  return watch('./src/scss/**/*.scss', build_sass);
 }
 
 function build_html() {

@@ -1,0 +1,48 @@
+@function light-vector($distance, $direction: $default-extrude-direction) {
+  @if $direction == 'SE' {
+    @return ($distance) ($distance);
+  }
+  @if $direction == 'NE' {
+    @return ($distance) (-$distance);
+  }
+  @if $direction == 'SW' {
+    @return (-$distance) ($distance);
+  }
+  // 'NW' or anything else {
+  @return (-$distance) (-$distance);
+}
+
+@function shadow-vector($distance, $direction: $default-extrude-direction) {
+  @if $direction == 'SE' {
+    @return (-$distance) (-$distance);
+  }
+  @if $direction == 'NE' {
+    @return (-$distance) ($distance);
+  }
+  @if $direction == 'SW' {
+    @return ($distance) (-$distance);
+  }
+  // 'NW' or anything else {
+  @return ($distance) ($distance);
+}
+
+@function inset($pressed){
+  @if $pressed{
+    @return inset;
+  } @else {
+    @return null;
+  }
+}
+
+@mixin extrude-shadow(
+  $base-color,
+  $intensity,
+  $distance,
+  $pressed: false,
+  $blur: $distance,
+  $direction: $default-extrude-direction
+) {
+  box-shadow: shadow-vector($distance, $direction) $blur
+      darken($base-color, $intensity) inset($pressed),
+    light-vector($distance, $direction) $blur lighten($base-color, $intensity) inset($pressed);
+}

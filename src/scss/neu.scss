@@ -1,5 +1,25 @@
 @import './base/reset.scss';
+@import './base/variables.scss';
+@import './base/typography.scss';
+@import './base/mixins.scss';
+
+@import './layout/index.scss';
+
+html {
+  background: $base-bg-color;
+}
 
 .card {
-  background: white;
+  padding: 1rem;
+  border-radius: 30px;
+  background: $base-bg-color;
+  @include extrude-shadow($base-bg-color, 10%, $default-extrude-distance);
+  &.pressed {
+    @include extrude-shadow(
+      $base-bg-color,
+      10%,
+      $default-extrude-distance / 2,
+      $pressed: true
+    );
+  }
 }
