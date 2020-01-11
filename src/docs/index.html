@@ -12,12 +12,32 @@
         margin: 0 auto;
         padding: 0 20px;
       }
+      section {
+        margin-top: 2rem;
+      }
     </style>
   </head>
   <body>
     <main>
       <h1>Cards</h1>
-      <div class="card">This is a card</div>
+      <section class="col-1">
+        <div class="card">This is a card</div>
+        <div class="card pressed">This card is pressed</div>
+      </section>
+      <section class="col-2">
+        <div class="card">
+          This card is long Lorem ipsum dolor sit, amet consectetur adipisicing
+          elit. Adipisci, officia ab dolor atque nesciunt facere? Doloremque
+          ullam doloribus perferendis similique optio illo ex nesciunt quo
+          quisquam cupiditate, corporis tenetur asperiores!
+        </div>
+        <div class="card pressed">
+          This card is long and pressed Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Voluptatum impedit autem sint porro aspernatur,
+          voluptates, eos tempore officiis nihil exercitationem temporibus quas
+          sunt culpa dolor ab laborum quam sed nesciunt.
+        </div>
+      </section>
     </main>
   </body>
 </html>
