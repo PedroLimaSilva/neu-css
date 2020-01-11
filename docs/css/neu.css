@@ -1,1 +1,1 @@
-body,html{margin:0;padding:0}.card{background:#fff}
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap);body,html{margin:0;padding:0}html{font-family:Raleway}.card,.html{background:#eee}.card{padding:1rem;border-radius:30px;box-shadow:15px 15px 15px brighten(#eee,10%),-30px 15px #d5d5d5}
