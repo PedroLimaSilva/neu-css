@@ -1,0 +1,47 @@
+@mixin default-shadow {
+  @include extrude-shadow($base-bg-color, 10%, $default-extrude-distance);
+}
+
+@mixin pressed-shadow {
+  @include extrude-shadow(
+    $base-bg-color,
+    10%,
+    $default-extrude-distance / 2,
+    $pressed: true
+  );
+}
+
+.card {
+  padding: 1rem;
+  border-radius: 30px;
+  background: $base-bg-color;
+  @include default-shadow();
+  &.pressed {
+    @include pressed-shadow();
+    &.animated {
+      &:focus, &:active {
+        animation: pressing 200ms linear forwards reverse;
+      }
+    }
+  }
+  &.animated {
+    &:focus, &:active {
+      animation: pressing 200ms linear forwards;
+    }
+  }
+}
+
+@keyframes pressing {
+  0% {
+    @include default-shadow();
+  }
+  50% {
+    @include extrude-shadow($base-bg-color, 10%, 0px);
+  }
+  51% {
+    @include extrude-shadow($base-bg-color, 10%, 0px, $pressed: true);
+  }
+  100% {
+    @include pressed-shadow();
+  }
+}

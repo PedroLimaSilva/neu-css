@@ -5,21 +5,9 @@
 
 @import './layout/index.scss';
 
+@import './components/card.scss';
+
 html {
   background: $base-bg-color;
-}
-
-.card {
-  padding: 1rem;
-  border-radius: 30px;
-  background: $base-bg-color;
-  @include extrude-shadow($base-bg-color, 10%, $default-extrude-distance);
-  &.pressed {
-    @include extrude-shadow(
-      $base-bg-color,
-      10%,
-      $default-extrude-distance / 2,
-      $pressed: true
-    );
-  }
+  color: $base-font-color;
 }
