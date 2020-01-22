@@ -39,7 +39,7 @@
   $intensity,
   $distance,
   $pressed: false,
-  $blur: $distance,
+  $blur: $distance * 2,
   $direction: $default-extrude-direction
 ) {
   box-shadow: shadow-vector($distance, $direction) $blur
