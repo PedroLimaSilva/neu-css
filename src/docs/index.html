@@ -6,19 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Neu-css demo</title>
 
-    <link rel="stylesheet" href="./css/neu.css" />
+    <link class="theme" rel="stylesheet" href="./css/neu.css" />
+    <link class="theme" rel="stylesheet" href="./css/neu-dark.css" disabled />
     <style>
       main {
         margin: 0 auto;
         padding: 0 20px;
       }
-      article, section {
+      article,
+      section {
         margin-top: 2rem;
       }
     </style>
   </head>
   <body>
     <main>
+      <nav>
+        <button class="button" onclick="toggleTheme()">Change theme</button>
+      </nav>
       <section>
         <h1>Cards</h1>
         <article class="col-1">
@@ -57,5 +62,24 @@
         </article>
       </section>
     </main>
+
+    <script>
+      'use strict';
+      function toggleTheme() {
+        const links = document.getElementsByClassName('theme');
+        console.log(links);
+        // TODO: Stop assuming there are only 2 kids
+        for(let i = 0; i<links.length; i++) {
+          const link = links[i];
+          const isDisabled = link.getAttribute('disabled');
+          console.log(link, isDisabled);
+          if(isDisabled){
+            link.removeAttribute('disabled');
+          } else {
+            link.setAttribute('disabled', 'disabled');
+          }
+        };
+      }
+    </script>
   </body>
 </html>
