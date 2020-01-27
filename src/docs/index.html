@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Neu-css demo</title>
 
-    <link class="theme" rel="stylesheet" href="./css/neu.css" />
+    <link class="theme" rel="stylesheet" href="./css/neu-light.css" />
     <link class="theme" rel="stylesheet" href="./css/neu-dark.css" disabled />
     <style>
       main {
@@ -67,12 +67,10 @@
       'use strict';
       function toggleTheme() {
         const links = document.getElementsByClassName('theme');
-        console.log(links);
         // TODO: Stop assuming there are only 2 kids
         for(let i = 0; i<links.length; i++) {
           const link = links[i];
           const isDisabled = link.getAttribute('disabled');
-          console.log(link, isDisabled);
           if(isDisabled){
             link.removeAttribute('disabled');
           } else {

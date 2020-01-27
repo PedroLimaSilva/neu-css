@@ -1,16 +1,3 @@
 @import './themes/dark.scss';
 
-@import './base/reset.scss';
-@import './base/variables.scss';
-@import './base/typography.scss';
-@import './base/mixins.scss';
-
-@import './layout/index.scss';
-
-@import './components/card.scss';
-@import './components/button.scss';
-
-html {
-  background: $base-bg-color;
-  color: $base-font-color;
-}
+@import './neu-master.scss';

@@ -8,22 +8,17 @@ sass.compiler = require('node-sass');
 
 const htmlmin = require('gulp-htmlmin');
 
-function build_sass() {
-  return src('./src/scss/neu.scss')
-    .pipe(sass())
-    .pipe(minifyCSS())
-    .pipe(dest('./docs/css'));
-}
+const themes = ['./src/scss/neu-light.scss', './src/scss/neu-dark.scss'];
 
-function build_sass_dark() {
-  return src('./src/scss/neu-dark.scss')
+function build_sass() {
+  return src(themes)
     .pipe(sass())
     .pipe(minifyCSS())
     .pipe(dest('./docs/css'));
 }
 
 function watch_sass() {
-  return watch('./src/scss/**/*.scss', parallel(build_sass, build_sass_dark));
+  return watch('./src/scss/**/*.scss', build_sass);
 }
 
 function build_html() {
@@ -36,7 +31,7 @@ function watch_html() {
   return watch('./src/**/*.html', build_html);
 }
 
-const build_all = parallel(build_sass, build_sass_dark, build_html);
+const build_all = parallel(build_sass, build_html);
 const watch_all = parallel(watch_sass, watch_html);
 
 exports.build = build_all;
