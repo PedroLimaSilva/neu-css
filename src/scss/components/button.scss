@@ -7,7 +7,9 @@
 }
 
 .button {
+  display: inline-block;
   padding: 1rem;
+  user-select: none;
   border-radius: 30px;
   background: $base-bg-color;
   @include default-shadow();

@@ -1,4 +1,9 @@
-html, body{
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -8,7 +13,7 @@ button {
   font: inherit;
   border: none;
   color: inherit;
-  &:focus{
+  &:focus {
     outline: none;
   }
 }
