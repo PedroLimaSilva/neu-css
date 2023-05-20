@@ -1,12 +1,12 @@
-@mixin default-shadow {
-  @include extrude-shadow($base-bg-color, 10%, $default-extrude-distance);
+@mixin default-shadow($color) {
+  @include extrude-shadow($color, 10%, $default-extrude-distance);
 }
 
-@mixin pressed-shadow {
+@mixin pressed-shadow($color) {
   @include extrude-shadow(
-    $base-bg-color,
+    $color,
     10%,
-    $default-extrude-distance / 2,
+    calc($default-extrude-distance / 2),
     $pressed: true
   );
 }
@@ -14,18 +14,20 @@
 .card {
   padding: 1rem;
   border-radius: 30px;
-  background: $base-bg-color;
-  @include default-shadow();
+  background: var(--theme-bg-color);
+  @include default-shadow($theme-light_bg-color);
   &.pressed {
-    @include pressed-shadow();
+    @include pressed-shadow($theme-light_bg-color);
     &.animated {
-      &:focus, &:active {
+      &:focus,
+      &:active {
         animation: pressing 200ms linear forwards reverse;
       }
     }
   }
   &.animated {
-    &:focus, &:active {
+    &:focus,
+    &:active {
       animation: pressing 200ms linear forwards;
     }
   }
@@ -33,15 +35,38 @@
 
 @keyframes pressing {
   0% {
-    @include default-shadow();
+    @include default-shadow($theme-light_bg-color);
   }
   50% {
-    @include extrude-shadow($base-bg-color, 10%, 0px);
+    @include extrude-shadow($theme-light_bg-color, 10%, 0px);
   }
   51% {
-    @include extrude-shadow($base-bg-color, 10%, 0px, $pressed: true);
+    @include extrude-shadow($theme-light_bg-color, 10%, 0px, $pressed: true);
   }
   100% {
-    @include pressed-shadow();
+    @include pressed-shadow($theme-light_bg-color);
+  }
+}
+
+.theme_dark {
+  .card {
+    @include default-shadow($theme-dark_bg-color);
+    &.pressed {
+      @include pressed-shadow($theme-dark_bg-color);
+    }
+  }
+  @keyframes pressing {
+    0% {
+      @include default-shadow($theme-dark_bg-color);
+    }
+    50% {
+      @include extrude-shadow($theme-dark_bg-color, 10%, 0px);
+    }
+    51% {
+      @include extrude-shadow($theme-dark_bg-color, 10%, 0px, $pressed: true);
+    }
+    100% {
+      @include pressed-shadow($theme-dark_bg-color);
+    }
   }
 }

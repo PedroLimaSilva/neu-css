@@ -6,15 +6,14 @@
   "author": "Pedro Lima e Silva",
   "license": "MIT",
   "scripts": {
-    "start": "gulp",
-    "server": "http-server ./docs"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-csso": "^4.0.1",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-sass": "^4.0.2",
-    "http-server": "^0.12.1",
-    "node-sass": "^4.13.0"
+    "vite": "^4.3.2"
+  },
+  "dependencies": {
+    "sass": "^1.62.1"
   }
 }

@@ -1,5 +1,6 @@
 @import './base/reset.scss';
 @import './base/variables.scss';
+@import './themes.scss';
 @import './base/typography.scss';
 @import './base/mixins.scss';
 
@@ -9,7 +10,7 @@
 @import './components/button.scss';
 @import './components/link.scss';
 
-html {
-  background: $base-bg-color;
-  color: $base-font-color;
+body {
+  background: var(--theme-bg-color);
+  color: var(--theme-font-color);
 }
