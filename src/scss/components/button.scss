@@ -1,9 +1,9 @@
-@mixin default-shadow {
-  @include extrude-shadow($base-bg-color, 10%, $default-extrude-distance);
+@mixin default-shadow($color) {
+  @include extrude-shadow($color, 10%, $default-extrude-distance);
 }
 
-@mixin pressed-shadow {
-  @include extrude-shadow($base-bg-color, 10%, 1px);
+@mixin pressed-shadow($color) {
+  @include extrude-shadow($color, 10%, 1px);
 }
 
 .button {
@@ -11,10 +11,19 @@
   padding: 1rem;
   user-select: none;
   border-radius: 30px;
-  background: $base-bg-color;
-  @include default-shadow();
+  background: var(--theme-bg-color);
+  @include default-shadow($theme-light_bg-color);
   transition: box-shadow 200ms;
   &:active {
-    @include pressed-shadow();
+    @include pressed-shadow($theme-light_bg-color);
+  }
+}
+
+.theme_dark{
+  .button{
+    @include default-shadow($theme-dark_bg-color);
+    &:active {
+      @include pressed-shadow($theme-dark_bg-color);
+    }
   }
 }

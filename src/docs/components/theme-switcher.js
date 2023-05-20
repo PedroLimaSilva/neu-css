@@ -9,15 +9,5 @@ export class ThemeSwitcher {
 }
 
 function toggleTheme() {
-  const links = document.getElementsByClassName('theme');
-  // TODO: Stop assuming there are only 2 kids
-  for (let i = 0; i < links.length; i++) {
-    const link = links[i];
-    const isDisabled = link.getAttribute('disabled') !== null;
-    if (isDisabled) {
-      link.removeAttribute('disabled');
-    } else {
-      link.setAttribute('disabled', '');
-    }
-  }
+  const links = document.body.classList.toggle('theme_dark');
 }

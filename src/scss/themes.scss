@@ -1,0 +1,21 @@
+$theme-light_bg-color: #eee;
+$theme-light_font-color: #3e3e3e;
+$theme-light_link-font-color: darkcyan;
+
+:root {
+  --theme-bg-color: #{$theme-light_bg-color};
+  --theme-font-color: #{$theme-light_font-color};
+
+  --theme-link-font-color: #{$theme-light_link-font-color};
+}
+
+$theme-dark_bg-color: #222;
+$theme-dark_font-color: #eee;
+$theme-dark_link-font-color: cyan;
+
+.theme_dark {
+  --theme-bg-color: #{$theme-dark_bg-color};
+  --theme-font-color: #{$theme-dark_font-color};
+
+  --theme-link-font-color: #{$theme-dark_link-font-color};
+}
