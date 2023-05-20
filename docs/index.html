@@ -1,21 +1,67 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>Neu-css demo</title><link class="theme" rel="stylesheet" href="./css/neu-light.css"><link class="theme" rel="stylesheet" href="./css/neu-dark.css" disabled="disabled"><style>main {
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Neu-css demo</title>
+    <!-- 
+    <link class="theme" rel="stylesheet" href="./css/neu-light.css" />
+    <link class="theme" rel="stylesheet" href="./css/neu-dark.css" disabled />
+    -->
+    <style>
+      main {
         margin: 0 auto;
         padding: 0 20px;
       }
       article,
       section {
         margin-top: 2rem;
-      }</style></head><body><main><nav><button class="button" onclick="toggleTheme()">Change theme</button></nav><section><h1>Cards</h1><article class="col-1"><div class="card">This is a card</div><div class="card pressed">This card is pressed</div></article><article class="col-2"><div class="card">This card is long Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci, officia ab dolor atque nesciunt facere? Doloremque ullam doloribus perferendis similique optio illo ex nesciunt quo quisquam cupiditate, corporis tenetur asperiores!</div><div class="card pressed">This card is long and pressed Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum impedit autem sint porro aspernatur, voluptates, eos tempore officiis nihil exercitationem temporibus quas sunt culpa dolor ab laborum quam sed nesciunt.</div></article><article class="col-2"><div class="card animated">This card is animated when pressed</div><div class="card pressed animated">This card is animated when pressed</div></article></section><section><h1>Buttons</h1><article class="col-1"><div style="display: flex; justify-content: space-between;"><button class="button">button</button></div></article></section></main><script>'use strict';
-      function toggleTheme() {
-        const links = document.getElementsByClassName('theme');
-        // TODO: Stop assuming there are only 2 kids
-        for(let i = 0; i<links.length; i++) {
-          const link = links[i];
-          const isDisabled = link.getAttribute('disabled');
-          if(isDisabled){
-            link.removeAttribute('disabled');
-          } else {
-            link.setAttribute('disabled', 'disabled');
-          }
-        };
-      }</script></body></html>
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-83924fa5.js"></script>
+    <link rel="stylesheet" href="/assets/index-6417158c.css">
+  </head>
+  <body>
+    <nav id="nav"></nav>
+    <main>
+      <section>
+        <h1>Cards</h1>
+        <article class="col-1">
+          <div class="card">This is a card</div>
+          <div class="card pressed">This card is pressed</div>
+        </article>
+        <article class="col-2">
+          <div class="card">
+            This card is long Lorem ipsum dolor sit, amet consectetur
+            adipisicing elit. Adipisci, officia ab dolor atque nesciunt facere?
+            Doloremque ullam doloribus perferendis similique optio illo ex
+            nesciunt quo quisquam cupiditate, corporis tenetur asperiores!
+          </div>
+          <div class="card pressed">
+            This card is long and pressed Lorem ipsum, dolor sit amet
+            consectetur adipisicing elit. Voluptatum impedit autem sint porro
+            aspernatur, voluptates, eos tempore officiis nihil exercitationem
+            temporibus quas sunt culpa dolor ab laborum quam sed nesciunt.
+          </div>
+        </article>
+        <article class="col-2">
+          <div class="card animated">This card is animated when pressed</div>
+          <div class="card pressed animated">
+            This card is animated when pressed
+          </div>
+        </article>
+      </section>
+      <section>
+        <h1>Buttons</h1>
+        <article class="col-1">
+          <div style="display: flex; justify-content: space-between">
+            <button class="button">button</button>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    
+  </body>
+</html>
