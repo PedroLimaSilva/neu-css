@@ -48,7 +48,7 @@
   }
 }
 
-.theme_dark {
+@mixin dark-theme {
   .card {
     @include default-shadow($theme-dark_bg-color);
     &.pressed {
@@ -69,4 +69,12 @@
       @include pressed-shadow($theme-dark_bg-color);
     }
   }
+}
+
+.theme_dark {
+  @include dark-theme()
+}
+
+@media (prefers-color-scheme: dark) {
+  @include dark-theme()
 }

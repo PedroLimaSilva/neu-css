@@ -19,11 +19,18 @@
   }
 }
 
-.theme_dark{
-  .button{
+@mixin dark-theme {
+  .button {
     @include default-shadow($theme-dark_bg-color);
     &:active {
       @include pressed-shadow($theme-dark_bg-color);
     }
   }
+}
+
+@media (prefers-color-scheme: dark) {
+  @include dark-theme();
+}
+.theme_dark {
+  @include dark-theme();
 }
