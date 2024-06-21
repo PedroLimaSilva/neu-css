@@ -6,11 +6,16 @@ $theme-dark_bg-color: #222;
 $theme-dark_font-color: #eee;
 $theme-dark_link-font-color: cyan;
 
-:root {
+@mixin light-theme {
   --theme-bg-color: #{$theme-light_bg-color};
   --theme-font-color: #{$theme-light_font-color};
   --theme-link-font-color: #{$theme-light_link-font-color};
 }
+
+.theme_light {
+  @include light-theme();
+}
+
 
 @mixin dark-theme {
   --theme-bg-color: #{$theme-dark_bg-color};

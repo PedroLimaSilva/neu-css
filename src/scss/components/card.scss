@@ -3,12 +3,7 @@
 }
 
 @mixin pressed-shadow($color) {
-  @include extrude-shadow(
-    $color,
-    10%,
-    calc($default-extrude-distance / 2),
-    $pressed: true
-  );
+  @include extrude-shadow($color, 10%, calc($default-extrude-distance / 2), $pressed: true);
 }
 
 .card {
@@ -33,18 +28,26 @@
   }
 }
 
-@keyframes pressing {
-  0% {
+.theme_light {
+  .card {
     @include default-shadow($theme-light_bg-color);
+    &.pressed {
+      @include pressed-shadow($theme-light_bg-color);
+    }
   }
-  50% {
-    @include extrude-shadow($theme-light_bg-color, 10%, 0px);
-  }
-  51% {
-    @include extrude-shadow($theme-light_bg-color, 10%, 0px, $pressed: true);
-  }
-  100% {
-    @include pressed-shadow($theme-light_bg-color);
+  @keyframes pressing {
+    0% {
+      @include default-shadow($theme-light_bg-color);
+    }
+    50% {
+      @include extrude-shadow($theme-light_bg-color, 10%, 0px);
+    }
+    51% {
+      @include extrude-shadow($theme-light_bg-color, 10%, 0px, $pressed: true);
+    }
+    100% {
+      @include pressed-shadow($theme-light_bg-color);
+    }
   }
 }
 
@@ -72,9 +75,9 @@
 }
 
 .theme_dark {
-  @include dark-theme()
+  @include dark-theme();
 }
 
 @media (prefers-color-scheme: dark) {
-  @include dark-theme()
+  @include dark-theme();
 }

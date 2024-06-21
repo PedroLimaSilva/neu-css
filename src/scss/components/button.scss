@@ -19,6 +19,16 @@
   }
 }
 
+.theme_light {
+  .button {
+    @include default-shadow($theme-light_bg-color);
+    &:active {
+      @include pressed-shadow($theme-light_bg-color);
+    }
+  }
+}
+
+
 @mixin dark-theme {
   .button {
     @include default-shadow($theme-dark_bg-color);
