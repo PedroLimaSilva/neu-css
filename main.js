@@ -1,5 +1,5 @@
-import './src/scss/neu.scss'
+import './src/scss/neu.scss';
 
 import { MainPage } from './src/docs/pages/main';
 
-new MainPage();
+document.getElementById('root').append(MainPage());
