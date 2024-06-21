@@ -5,15 +5,15 @@
   "repository": "https://github.com/PedroLimaSilva/neu-css",
   "author": "Pedro Lima e Silva",
   "license": "MIT",
+  "type": "module",
   "scripts": {
+    "start": "vite",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
+    "sass": "^1.62.1",
     "vite": "^4.3.9"
-  },
-  "dependencies": {
-    "sass": "^1.62.1"
   }
 }
