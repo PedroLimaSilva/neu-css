@@ -1,9 +1,11 @@
 @mixin default-shadow($color) {
   @include extrude-shadow($color, 10%, $default-extrude-distance);
+  transform: scale(1);
 }
 
 @mixin pressed-shadow($color) {
   @include extrude-shadow($color, 10%, calc($default-extrude-distance / 2), $pressed: true);
+  transform: scale(0.975);
 }
 
 .card {
